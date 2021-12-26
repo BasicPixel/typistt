@@ -6,9 +6,9 @@ words mode uses the 200 most common english words by default or gets random word
 
 ## abbreviations
 
-wpm = words per minute
-cpm = characters per minute
-acc = accuracy
+- wpm = words per minute
+- cpm = characters per minute
+- acc = accuracy
 
 ## hotkeys
 
