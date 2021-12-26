@@ -39,7 +39,7 @@ const Navbar = () => {
         about
       </Link>
       <a
-        href="https://github.com/BasicPixel"
+        href="https://github.com/BasicPixel/typistt"
         target="_blank"
         rel="noreferrer"
         className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
