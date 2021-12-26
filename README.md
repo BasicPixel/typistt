@@ -1,10 +1,8 @@
 # typistt
 
-## about
-
 typistt is a simple typing test / typing practice website, inspired by monkeytype.com
 
-words mode uses the 200 most common english words by default or gets random words from an api, while quote mode gets a random quote from quotable.
+words mode uses the 200 most common english words by default or gets random words from [an api](https://random-word-api.herokuapp.com/home), while quote mode gets a random quote from [quotable](https://github.com/lukePeavey/quotable).
 
 ## abbreviations
 
