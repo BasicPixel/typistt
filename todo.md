@@ -1,4 +1,4 @@
-## Current TO-DOs
+## Main TODOs
 
 - [x] Add settings
   - [x] Change font
@@ -11,11 +11,13 @@
   - [x] Accuracy
   - [x] Time
 
-## Add Later
+## Adding Later
 
 - [ ] Add dark / light mode support (automatic)
+- [ ] Change light / dark mode (manual)
 - [ ] Make a favicon
 - [ ] Wiki test mode
 - [ ] Time mode
-- [ ] Change light / dark mode manually
-- [ ] Change theme color
+- [ ] Change global accent color
+- [ ] Save high score
+- [ ] Ctrl+Backspace support
