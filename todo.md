@@ -19,3 +19,4 @@
 - [ ] Time mode
 - [ ] Change light / dark mode manually
 - [ ] Change theme color
+- [ ] Change quote category
