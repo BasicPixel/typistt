@@ -6,15 +6,15 @@ words mode uses the 200 most common english words by default or gets random word
 
 ## abbreviations
 
-wpm = words per minute
-cpm = characters per minute
-acc = accuracy
+- wpm = words per minute
+- cpm = characters per minute
+- acc = accuracy
 
 ## hotkeys
 
-tab: restart test
-esc: reshuffle words (words mode)
-note: typistt does not yet support ctrl+enter to delete a whole world (adding later)
+- tab: restart test
+- esc: reshuffle words (words mode)
+- _note: typistt does not yet support ctrl+enter to delete a whole world (adding later)_
 
 ---
 
