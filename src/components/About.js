@@ -1,6 +1,6 @@
 const About = () => {
   return (
-    <p>
+    <>
       <h1 className="text-2xl text-slate-500 py-2">about</h1>
       <p>
         typistt is a simple typing test / typing practice website, inspired by
@@ -50,9 +50,9 @@ const About = () => {
         <li>Github: BasicPixel</li>
       </ul>
       <p className="text-center my-4 text-slate-400">
-        finely crafted by BasicPixel using react js, tailwind css.
+        finely crafted by BasicPixel using react + tailwind.
       </p>
-    </p>
+    </>
   );
 };
 

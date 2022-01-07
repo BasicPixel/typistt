@@ -1,5 +1,10 @@
 import "../index.css";
 import { Link } from "react-router-dom";
+import {
+  CogIcon,
+  InformationCircleIcon,
+  CodeIcon,
+} from "@heroicons/react/outline";
 
 const Navbar = () => {
   return (
@@ -30,13 +35,13 @@ const Navbar = () => {
         to="settings"
         className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
       >
-        settings
+        <CogIcon className="h-5 w-5" />
       </Link>
       <Link
         to="about"
         className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
       >
-        about
+        <InformationCircleIcon className="h-5 w-5" />
       </Link>
       <a
         href="https://github.com/BasicPixel/typistt"
@@ -44,7 +49,7 @@ const Navbar = () => {
         rel="noreferrer"
         className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
       >
-        github
+        <CodeIcon className="h-5 w-5" />
       </a>
     </div>
   );
