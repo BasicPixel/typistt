@@ -15,7 +15,7 @@ const Settings = () => {
     "quoteCategory",
     "famous-quotes"
   );
-  const [highScore, setHighScore] = useLocalStorage("highScore", 0);
+  const [highScore] = useLocalStorage("highScore", 0);
 
   if (customText === "No custom text. add some in the settings.") {
     setCustomText("");
