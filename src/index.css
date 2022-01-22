@@ -16,3 +16,17 @@
   /* @apply "font-serif"; */
   font-family: "Roboto Slab", Georgia, Times, "Times New Roman", serif;
 }
+
+@layer base {
+  body {
+    @apply dark:bg-slate-800 dark:text-slate-200 bg-slate-200 text-slate-800;
+  }
+
+  section h1 {
+    @apply py-2 text-2xl text-slate-500;
+  }
+
+  .link {
+    @apply underline dark:text-slate-400 text-slate-600;
+  }
+}

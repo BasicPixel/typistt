@@ -21,11 +21,13 @@ const TestPage = ({ mode }) => {
   const [quoteData, quoteLoading] = useFetch("https://api.quotable.io/random");
 
   return (
-    <div className="flex-auto flex justify-center items-center py-4">
-      <div className="flex-auto flex justify-center items-center py-4">
+    <div className="flex items-center justify-center flex-auto py-4">
+      <div className="flex items-center justify-center flex-auto py-4">
         {/* If content is loading */}
         {quoteLoading || randomWordsLoading ? (
-          <p className="select-none text-slate-400 text-xl">loading...</p>
+          <p className="text-xl select-none dark:text-slate-400 text-slate-600">
+            loading...
+          </p>
         ) : // If nothing is loading, check current mode
         mode === "words" ? (
           // If mode is words, check word mode (random / common)
@@ -46,7 +48,7 @@ const TestPage = ({ mode }) => {
         ) : mode === "custom" ? (
           <Test text={customText} mode={mode} />
         ) : (
-          <p className="select-none text-slate-400 text-xl">
+          <p className="text-xl select-none dark:text-slate-400 text-slate-600">
             Choose a mode from the navigation bar to start.
           </p>
         )}

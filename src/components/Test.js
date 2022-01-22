@@ -120,22 +120,34 @@ const Test = ({ text, setCommonWords, count, mode }) => {
           className="text-slate-500 flex justify-between mb-4 select-none min-w-[20em]"
         >
           <div>
-            wpm: <span className="text-slate-300">{stats.wpm}</span>
+            wpm:{" "}
+            <span className="dark:text-slate-300 text-slate-700">
+              {stats.wpm}
+            </span>
           </div>
           <div>
-            cpm: <span className="text-slate-300">{stats.cpm}</span>
+            cpm:{" "}
+            <span className="dark:text-slate-300 text-slate-700">
+              {stats.cpm}
+            </span>
           </div>
           <div>
-            acc: <span className="text-slate-300">{stats.accuracy}</span>
+            acc:{" "}
+            <span className="dark:text-slate-300 text-slate-700">
+              {stats.accuracy}
+            </span>
           </div>
           <div>
-            time: <span className="text-slate-300">{stats.time}</span>
+            time:{" "}
+            <span className="dark:text-slate-300 text-slate-700">
+              {stats.time}
+            </span>
           </div>
         </div>
       )}
       <div
         tabIndex={-1}
-        className="text-xl focus:outline-none select-none dark:text-slate-200 text-slate-800"
+        className="text-xl select-none focus:outline-none dark:text-slate-200 text-slate-800"
         onKeyPress={handleKeyPress}
         onKeyDown={handleKeyDown}
         ref={testDiv}
@@ -144,7 +156,7 @@ const Test = ({ text, setCommonWords, count, mode }) => {
           if (typedLetters[letterPosition] === false) {
             return (
               <span
-                className="text-red-500 decoration-red-500 underline"
+                className="text-red-500 underline decoration-red-500"
                 key={letterPosition}
               >
                 {text[letterPosition]}
@@ -154,7 +166,7 @@ const Test = ({ text, setCommonWords, count, mode }) => {
             return <span key={letterPosition}>{text[letterPosition]}</span>;
           }
         })}
-        <span className="dark:bg-slate-200 dark:text-slate-800 bg-slate-800 text-slate-200 rounded py-1">
+        <span className="py-1 rounded dark:bg-slate-200 dark:text-slate-800 bg-slate-600 text-slate-200">
           {text && text[cursorPos]}
         </span>
         <span className="dark:text-slate-500 text-slate-400">

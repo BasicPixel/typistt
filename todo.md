@@ -10,12 +10,12 @@
   - [x] CPM
   - [x] Accuracy
   - [x] Time
+- [x] Add dark / light mode support (automatic)
+- [x] Make a favicon
 
 ## Adding Later
 
-- [ ] Add dark / light mode support (automatic)
 - [ ] Change light / dark mode (manual)
-- [ ] Make a favicon
 - [ ] Wiki test mode
 - [ ] Time mode
 - [ ] Change light / dark mode manually

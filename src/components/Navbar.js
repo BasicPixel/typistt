@@ -8,48 +8,48 @@ import {
 
 const Navbar = () => {
   return (
-    <div className="dark:bg-slate-700 bg-slate-300 flex-0 rounded-b p-2 flex items-center md:gap-4 md:justify-start justify-between">
-      <Link to="/" className="text-2xl pr-2">
+    <div className="flex items-center justify-between p-2 rounded-b dark:bg-slate-700 bg-slate-300 flex-0 md:gap-4 md:justify-start">
+      <Link to="/" className="pr-2 text-2xl">
         typistt
       </Link>
       <Link
         to="quote"
-        className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
+        className="p-1 duration-200 rounded hover:bg-slate-400 dark:hover:bg-slate-800 hover:transition-all"
       >
         quote
       </Link>
       <Link
         to="words"
-        className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
+        className="p-1 duration-200 rounded hover:bg-slate-400 dark:hover:bg-slate-800 hover:transition-all"
       >
         words
       </Link>
       <Link
         to="custom"
-        className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
+        className="p-1 duration-200 rounded hover:bg-slate-400 dark:hover:bg-slate-800 hover:transition-all"
       >
         custom
       </Link>
       <div className="select-none">|</div>
       <Link
         to="settings"
-        className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
+        className="p-1 duration-200 rounded hover:bg-slate-400 dark:hover:bg-slate-800 hover:transition-all"
       >
-        <CogIcon className="h-5 w-5" />
+        <CogIcon className="w-5 h-5" />
       </Link>
       <Link
         to="about"
-        className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
+        className="p-1 duration-200 rounded hover:bg-slate-400 dark:hover:bg-slate-800 hover:transition-all"
       >
-        <InformationCircleIcon className="h-5 w-5" />
+        <InformationCircleIcon className="w-5 h-5" />
       </Link>
       <a
         href="https://github.com/BasicPixel/typistt"
         target="_blank"
         rel="noreferrer"
-        className="hover:bg-slate-800 hover:transition-all duration-200 rounded p-1"
+        className="p-1 duration-200 rounded hover:bg-slate-400 dark:hover:bg-slate-800 hover:transition-all"
       >
-        <CodeIcon className="h-5 w-5" />
+        <CodeIcon className="w-5 h-5" />
       </a>
     </div>
   );
