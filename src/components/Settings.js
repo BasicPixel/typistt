@@ -1,8 +1,14 @@
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const Settings = () => {
+  const CUSTOM_TEXT_MIN_LENGTH = 20;
+
   const [font, setFont] = useLocalStorage("font", "mono");
   const [customText, setCustomText] = useLocalStorage("customText", "");
+  const [customTextLength, setCustomTextLength] = useLocalStorage(
+    "customTextLength",
+    customText.length
+  );
   const [wordsMode, setWordsMode] = useLocalStorage("wordsMode", "common");
   const [wordsCount, setWordsCount] = useLocalStorage("wordsCount", 100);
   const [quoteCategory, setQuoteCategory] = useLocalStorage(
@@ -37,9 +43,15 @@ const Settings = () => {
         value={customText}
         onChange={(e) => {
           setCustomText(e.target.value);
+          setCustomTextLength(customText.length);
         }}
         spellCheck={false}
       ></textarea>
+      {customTextLength < CUSTOM_TEXT_MIN_LENGTH && (
+        <div className="text-red-500">
+          Custom text must be at least {CUSTOM_TEXT_MIN_LENGTH} characters long.
+        </div>
+      )}
 
       <label htmlFor="words-mode">words mode: choose words</label>
       <select

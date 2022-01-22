@@ -13,8 +13,8 @@
 - [x] Add dark / light mode support (automatic)
 - [x] Make a favicon
 - [x] Choose quote category
+- [x] Add minimum length for custom mode text
 
-- [ ] Add minimum words for custom mode
 - [ ] Change light / dark mode (manual)
 - [ ] Wiki test mode
 - [ ] Time mode
