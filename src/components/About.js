@@ -28,6 +28,10 @@ const About = () => {
         </a>
         .
       </p>
+      <p>
+        typistt currently only supports desktop or devices with a physical
+        keyboard. There are no current plans to add support for mobile.
+      </p>
       <h1>abbreviations</h1>
       <ul className="list-disc">
         <li>wpm = words per minute</li>

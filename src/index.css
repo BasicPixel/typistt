@@ -29,4 +29,8 @@
   .link {
     @apply underline dark:text-slate-400 text-slate-600;
   }
+
+  section p {
+    @apply my-2;
+  }
 }
