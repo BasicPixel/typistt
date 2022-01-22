@@ -1,4 +1,4 @@
-## Main TODOs
+## typistt TODOs
 
 - [x] Add settings
   - [x] Change font
@@ -14,8 +14,7 @@
 - [x] Make a favicon
 - [x] Choose quote category
 
-## Adding Later
-
+- [ ] Add minimum words for custom mode
 - [ ] Change light / dark mode (manual)
 - [ ] Wiki test mode
 - [ ] Time mode
