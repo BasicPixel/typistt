@@ -5,6 +5,10 @@ const Settings = () => {
   const [customText, setCustomText] = useLocalStorage("customText", "");
   const [wordsMode, setWordsMode] = useLocalStorage("wordsMode", "common");
   const [wordsCount, setWordsCount] = useLocalStorage("wordsCount", 100);
+  const [quoteCategory, setQuoteCategory] = useLocalStorage(
+    "quoteCategory",
+    "famous-quotes"
+  );
 
   if (customText === "No custom text. add some in the settings.") {
     setCustomText("");
@@ -46,6 +50,19 @@ const Settings = () => {
       >
         <option value="common">commonly used words</option>
         <option value="random">randomly</option>
+      </select>
+
+      <label htmlFor="quote-category">quotes mode: quote category</label>
+      <select
+        id="quote-category"
+        className="w-full p-2 mt-1 mb-2 rounded dark:bg-slate-700 bg-slate-300"
+        value={quoteCategory}
+        onChange={(e) => setQuoteCategory(e.target.value)}
+      >
+        <option value="famous-quotes">famous-quotes</option>
+        <option value="inspirational">inspirational</option>
+        <option value="nature">nature</option>
+        <option value="technology">technology</option>
       </select>
 
       <label htmlFor="words-count">words mode: word count ({wordsCount})</label>

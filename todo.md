@@ -12,15 +12,13 @@
   - [x] Time
 - [x] Add dark / light mode support (automatic)
 - [x] Make a favicon
+- [x] Choose quote category
 
 ## Adding Later
 
 - [ ] Change light / dark mode (manual)
 - [ ] Wiki test mode
 - [ ] Time mode
-- [ ] Change light / dark mode manually
-- [ ] Change theme color
-- [ ] Change quote category
 - [ ] Change global accent color
 - [ ] Save high score
 - [ ] Ctrl+Backspace support

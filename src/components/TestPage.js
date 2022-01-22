@@ -9,6 +9,7 @@ const TestPage = ({ mode }) => {
   const [wordsCount] = useLocalStorage("wordsCount", 100);
   const [wordsMode] = useLocalStorage("wordsMode", "common");
   const [customText, setCustomText] = useLocalStorage("customText", "");
+  const [quoteCategory] = useLocalStorage("quoteCategory", "famous-quotes");
 
   if (customText === "") {
     setCustomText("No custom text. add some in the settings.");
@@ -18,7 +19,9 @@ const TestPage = ({ mode }) => {
   const [randomWordsData, randomWordsLoading] = useFetch(
     `https://random-word-api.herokuapp.com/word?number=${wordsCount}`
   );
-  const [quoteData, quoteLoading] = useFetch("https://api.quotable.io/random");
+  const [quoteData, quoteLoading] = useFetch(
+    `https://api.quotable.io/random?tags=${quoteCategory}`
+  );
 
   return (
     <div className="flex items-center justify-center flex-auto py-4">
