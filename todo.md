@@ -14,10 +14,10 @@
 - [x] Make a favicon
 - [x] Choose quote category
 - [x] Add minimum length for custom mode text
+- [x] Save high score in localStorage
 
+- [ ] Change global accent color
 - [ ] Change light / dark mode (manual)
 - [ ] Wiki test mode
 - [ ] Time mode
-- [ ] Change global accent color
-- [ ] Save high score
 - [ ] Ctrl+Backspace support

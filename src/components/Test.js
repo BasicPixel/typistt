@@ -1,7 +1,10 @@
 import { useEffect, useState, useRef } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 import getWords from "../words";
 
 const Test = ({ text, setCommonWords, count, mode }) => {
+  const [highScore, setHighScore] = useLocalStorage("highScore", 0);
+
   const testDiv = useRef(null);
 
   const [cursorPos, setCursorPos] = useState(0);
@@ -14,6 +17,7 @@ const Test = ({ text, setCommonWords, count, mode }) => {
     wpm: 0,
     cpm: 0,
     accuracy: 0,
+    isHighScore: false,
   });
   const [showStats, setShowStats] = useState(false);
 
@@ -49,14 +53,18 @@ const Test = ({ text, setCommonWords, count, mode }) => {
 
     const accuracy = Math.round((100 * correctCount) / numberOfChars);
 
+    const wpm = Math.round((numberOfWords / seconds) * 60);
+
     setStats({
       time: `${seconds}s`,
-      wpm: Math.round((numberOfWords / seconds) * 60),
+      wpm: wpm,
       cpm: Math.round((numberOfChars / seconds) * 60),
       accuracy: `${accuracy}%`,
+      isHighScore: wpm > highScore,
     });
 
     setShowStats(true);
+    setHighScore(wpm > highScore ? wpm : highScore);
   };
 
   const restart = ({ reshuffle = false } = {}) => {
@@ -120,7 +128,7 @@ const Test = ({ text, setCommonWords, count, mode }) => {
           className="text-slate-500 flex justify-between mb-4 select-none min-w-[20em]"
         >
           <div>
-            wpm:{" "}
+            wpm: {stats.isHighScore && <span>👑</span>}
             <span className="dark:text-slate-300 text-slate-700">
               {stats.wpm}
             </span>

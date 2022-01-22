@@ -15,15 +15,15 @@ const Settings = () => {
     "quoteCategory",
     "famous-quotes"
   );
+  const [highScore, setHighScore] = useLocalStorage("highScore", 0);
 
   if (customText === "No custom text. add some in the settings.") {
     setCustomText("");
   }
 
   return (
-    <>
-      <h1 className="py-2 text-2xl text-slate-500">Settings</h1>
-
+    <section className="py-4">
+      <h1>Settings</h1>
       <label htmlFor="font">font family (refresh to see effect)</label>
       <select
         id="font"
@@ -35,7 +35,6 @@ const Settings = () => {
         <option value="sans">sans-serif</option>
         <option value="serif">serif</option>
       </select>
-
       <label htmlFor="custom-text">custom mode text</label>
       <textarea
         id="custom-text"
@@ -52,7 +51,6 @@ const Settings = () => {
           Custom text must be at least {CUSTOM_TEXT_MIN_LENGTH} characters long.
         </div>
       )}
-
       <label htmlFor="words-mode">words mode: choose words</label>
       <select
         id="words-mode"
@@ -63,7 +61,6 @@ const Settings = () => {
         <option value="common">commonly used words</option>
         <option value="random">randomly</option>
       </select>
-
       <label htmlFor="quote-category">quotes mode: quote category</label>
       <select
         id="quote-category"
@@ -76,12 +73,11 @@ const Settings = () => {
         <option value="nature">nature</option>
         <option value="technology">technology</option>
       </select>
-
       <label htmlFor="words-count">words mode: word count ({wordsCount})</label>
       <input
         type="range"
         id="words-count"
-        className="mt-1 mb-2 accent-slate-500"
+        className="block w-full mt-1 mb-2 accent-slate-500"
         value={wordsCount}
         onChange={(e) => {
           setWordsCount(e.target.value);
@@ -89,7 +85,12 @@ const Settings = () => {
         min={5}
         max={200}
       />
-    </>
+
+      <h1>Stats</h1>
+      <ul className="list-disc">
+        <li>👑 High score: {highScore}</li>
+      </ul>
+    </section>
   );
 };
 
