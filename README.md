@@ -4,6 +4,14 @@ typistt is a simple typing test / typing practice website, inspired by monkeytyp
 
 words mode uses the 200 most common english words by default or gets random words from [an api](https://random-word-api.herokuapp.com/home), while quote mode gets a random quote from [quotable](https://github.com/lukePeavey/quotable).
 
+## Built with
+
+- React (Create React App)
+- TailwindCSS
+  - tailwind-scrollbar
+- axios
+- Vercel deployment
+
 ## abbreviations
 
 - wpm = words per minute
