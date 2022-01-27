@@ -47,14 +47,17 @@ const About = () => {
           (adding later)
         </li>
       </ul>
-      <h1>contact me</h1>
-      <ul className="list-disc">
-        <li>Email: osama.mo.qudah@gmail.com</li>
-        <li>Twitter: @pQudah</li>
-        <li>Github: BasicPixel</li>
-      </ul>
-      <p className="my-4 text-center dark:text-slate-400 text-slate-600">
-        finely crafted by BasicPixel using react + tailwind.
+      <p className="my-4 text-lg text-center dark:text-slate-400 text-slate-600">
+        finely crafted by{" "}
+        <a
+          className="link"
+          href="https://pixel.is-a.dev"
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          @BasicPixel
+        </a>{" "}
+        using react + tailwind.
       </p>
     </section>
   );
