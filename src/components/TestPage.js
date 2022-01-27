@@ -27,34 +27,36 @@ const TestPage = ({ mode }) => {
     <div className="flex items-center justify-center flex-auto py-4">
       <div className="flex items-center justify-center flex-auto py-4">
         {/* If content is loading */}
-        {quoteLoading || randomWordsLoading ? (
-          <p className="text-xl select-none dark:text-slate-400 text-slate-600">
-            loading...
-          </p>
-        ) : // If nothing is loading, check current mode
-        mode === "words" ? (
-          // If mode is words, check word mode (random / common)
-          wordsMode === "common" ? (
-            <Test
-              text={commonWords}
-              setCommonWords={setCommonWords}
-              count={wordsCount}
-              mode={mode}
-            />
-          ) : (
-            !randomWordsLoading && (
-              <Test text={randomWordsData?.join(" ")} mode={mode} />
+        {
+          // If nothing is loading, check current mode
+          mode === "words" ? (
+            // If mode is words, check word mode (random / common)
+            wordsMode === "common" ? (
+              <Test
+                text={commonWords}
+                setCommonWords={setCommonWords}
+                count={wordsCount}
+                mode={mode}
+              />
+            ) : (
+              !randomWordsLoading && (
+                <Test text={randomWordsData?.join(" ")} mode={mode} />
+              )
             )
+          ) : mode === "quote" && !quoteLoading ? (
+            <Test
+              text={quoteData?.content}
+              mode={mode}
+              quoteLoading={quoteLoading}
+            />
+          ) : mode === "custom" ? (
+            <Test text={customText} mode={mode} />
+          ) : (
+            <p className="text-xl select-none dark:text-slate-400 text-slate-600">
+              Choose a mode from the navigation bar to start.
+            </p>
           )
-        ) : mode === "quote" && !quoteLoading ? (
-          <Test text={quoteData?.content} mode={mode} />
-        ) : mode === "custom" ? (
-          <Test text={customText} mode={mode} />
-        ) : (
-          <p className="text-xl select-none dark:text-slate-400 text-slate-600">
-            Choose a mode from the navigation bar to start.
-          </p>
-        )}
+        }
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import getWords from "../words";
 
-const Test = ({ text, setCommonWords, count, mode }) => {
+const Test = ({ text, setCommonWords, count, mode, quoteLoading }) => {
   const [highScore, setHighScore] = useLocalStorage("highScore", 0);
 
   const testDiv = useRef(null);
@@ -120,69 +120,79 @@ const Test = ({ text, setCommonWords, count, mode }) => {
     }
   };
 
-  return (
-    <div>
-      {showStats && (
-        <div
-          id="stats"
-          className="text-slate-500 flex justify-between mb-4 select-none min-w-[20em]"
-        >
-          <div>
-            wpm: {stats.isHighScore && <span>👑</span>}
-            <span className="dark:text-slate-300 text-slate-700">
-              {stats.wpm}
-            </span>
-          </div>
-          <div>
-            cpm:{" "}
-            <span className="dark:text-slate-300 text-slate-700">
-              {stats.cpm}
-            </span>
-          </div>
-          <div>
-            acc:{" "}
-            <span className="dark:text-slate-300 text-slate-700">
-              {stats.accuracy}
-            </span>
-          </div>
-          <div>
-            time:{" "}
-            <span className="dark:text-slate-300 text-slate-700">
-              {stats.time}
-            </span>
-          </div>
-        </div>
-      )}
-      <div
-        tabIndex={-1}
-        className="text-xl select-none focus:outline-none dark:text-slate-200 text-slate-800"
-        onKeyPress={handleKeyPress}
-        onKeyDown={handleKeyDown}
-        ref={testDiv}
-      >
-        {Object.keys(typedLetters).map((letterPosition) => {
-          if (typedLetters[letterPosition] === false) {
-            return (
-              <span
-                className="text-red-500 underline decoration-red-500"
-                key={letterPosition}
-              >
-                {text[letterPosition]}
+  if (mode === "quote" && quoteLoading === true) {
+    return (
+      <>
+        <p className="text-xl select-none dark:text-slate-400 text-slate-600">
+          loading...
+        </p>
+      </>
+    );
+  } else {
+    return (
+      <div>
+        {showStats && (
+          <div
+            id="stats"
+            className="text-slate-500 flex justify-between mb-4 select-none min-w-[20em]"
+          >
+            <div>
+              wpm: {stats.isHighScore && <span>👑</span>}
+              <span className="dark:text-slate-300 text-slate-700">
+                {stats.wpm}
               </span>
-            );
-          } else {
-            return <span key={letterPosition}>{text[letterPosition]}</span>;
-          }
-        })}
-        <span className="py-1 rounded dark:bg-slate-200 dark:text-slate-800 bg-slate-600 text-slate-200">
-          {text && text[cursorPos]}
-        </span>
-        <span className="dark:text-slate-500 text-slate-400">
-          {text && text.slice(cursorPos + 1)}
-        </span>
+            </div>
+            <div>
+              cpm:{" "}
+              <span className="dark:text-slate-300 text-slate-700">
+                {stats.cpm}
+              </span>
+            </div>
+            <div>
+              acc:{" "}
+              <span className="dark:text-slate-300 text-slate-700">
+                {stats.accuracy}
+              </span>
+            </div>
+            <div>
+              time:{" "}
+              <span className="dark:text-slate-300 text-slate-700">
+                {stats.time}
+              </span>
+            </div>
+          </div>
+        )}
+        <div
+          tabIndex={-1}
+          className="text-xl select-none focus:outline-none dark:text-slate-200 text-slate-800"
+          onKeyPress={handleKeyPress}
+          onKeyDown={handleKeyDown}
+          ref={testDiv}
+        >
+          {Object.keys(typedLetters).map((letterPosition) => {
+            if (typedLetters[letterPosition] === false) {
+              return (
+                <span
+                  className="text-red-500 underline decoration-red-500"
+                  key={letterPosition}
+                >
+                  {text[letterPosition]}
+                </span>
+              );
+            } else {
+              return <span key={letterPosition}>{text[letterPosition]}</span>;
+            }
+          })}
+          <span className="py-1 rounded dark:bg-slate-200 dark:text-slate-800 bg-slate-600 text-slate-200">
+            {text && text[cursorPos]}
+          </span>
+          <span className="dark:text-slate-500 text-slate-400">
+            {text && text.slice(cursorPos + 1)}
+          </span>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Test;
