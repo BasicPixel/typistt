@@ -15,7 +15,7 @@ const Settings = () => {
     "quoteCategory",
     "famous-quotes"
   );
-  const [highScore] = useLocalStorage("highScore", 0);
+  const [highScore, setHighScore] = useLocalStorage("highScore", 0);
 
   if (customText === "No custom text. add some in the settings.") {
     setCustomText("");
@@ -88,7 +88,13 @@ const Settings = () => {
 
       <h1>Stats</h1>
       <ul className="list-disc">
-        <li>👑 High score: {highScore}</li>
+        <li>👑 High score: {highScore} wpm</li>
+        <button
+          onClick={() => setHighScore(0)}
+          className="px-2 py-1 my-2 bg-red-700 rounded text-slate-100"
+        >
+          reset high score
+        </button>
       </ul>
     </section>
   );
